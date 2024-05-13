@@ -1,0 +1,422 @@
+@use './variables' as *;
+@use './mixin' as*;
+@import './reset';
+@import './colors';
+
+.header {
+    width: 100%;
+    height: 70px;
+    background-color: $bg;
+    position: fixed;
+    z-index: 1;
+
+    &__div {
+        @include base($js: space-around);
+        padding-top: 3px;
+        height: 50px;
+
+        &__input {
+            @include border();
+            width: 370px;
+            height: 30px;
+            background-color: rgba(255, 255, 255, 0);
+            border: 1.2px solid #FFFFFF80;
+            padding-left: 15px;
+        }
+
+        &__buttons {
+            @include base();
+            gap: 10px;
+            &__btn1 {
+                @include border($bdr: 2px solid #FF4656);
+                background-color: $bg;
+                color: $text1;
+            }
+
+            &__btn2 {
+                @include border();
+                background-color: $btn;
+                color: $text1;
+            }
+        }
+
+
+    }
+
+    .header__div2 {
+        padding-top: 7px;
+        @include font();
+        background-color: $text1;
+        height: 35px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        &__list {
+            @include base();
+            gap: 50px;
+            color: $border;
+            font-size: 13px;
+            font-weight: bold;
+            &__li1 {
+                color: $btn;
+                cursor: pointer;
+                border-bottom: 2px solid $btn;
+            }
+
+            &__li {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.main {
+
+    .section1 {
+        @include size();
+        @include base($js:space-around);
+        flex-direction: column;
+        background-image: url('./assets/image/bg\ image.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: $bg;
+        padding-top: 100px;
+        .section1-wrapper{
+            @include base();
+        }
+        &__container{
+            &__header{
+                @include flex();
+                gap: 15px;
+                color: $text1;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                &__h1{
+                    font-weight: bold;
+                    font-size: 35px;
+                    letter-spacing: 2px;
+                }
+                &__p{
+                    color: $btn;
+                    font-weight: bold;
+                    font-size: 18px
+                }
+            }
+            &__main{
+                @include flex();
+                gap: 19px;
+                color: $text1;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-size: 14px;
+                font-weight: bold;
+                border-left: 3px solid $btn;
+                padding-left: 20px;
+                &__div1{
+                    @include base($js:start);
+                    gap: 15px;
+                }
+                &__div2{
+                    @extend .section1__container__main__div1;
+                }
+                &__div3{
+                    @extend .section1__container__main__div1;
+                }
+            }
+            &__bottom{
+                @include base($js:start);
+                gap: 30px;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                &__p{
+                    color: $text1;
+                    font-size: 25px;
+                    font-weight: bold;
+                }
+                &__btn{
+                    @include border($bdr:none, $wd:96px, $hg:35px);
+                    font-weight: bold;
+                }
+            }
+        }
+        &__imgs{
+            @include flex();
+            @include base();
+            gap: 20px;
+            &__1{
+                @include base();
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-weight: bold;
+                &__bg1{
+                    background-image: url('./assets/image/image\ 43.png');
+                    width: 404px;
+                    height: 230px;
+                    &__p{
+                        color: $text1;
+                        padding: 74px;
+                        font-size: 20px;
+                    }
+                }
+                &__bg2{
+                    background-image: url('./assets/image/image\ 3.png');
+                    width: 570px;
+                    height: 274px;
+                    &__p{
+                        color: $text1;
+                        padding: 78px;
+                        font-size: 26px;
+                    }
+                }
+                &__bg3{
+                    background-image: url('./assets/image/image\ 52.png');
+                    width: 404px;
+                    height: 230px;
+                    &__p{
+                        color: $text1;
+                        padding: 74px;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+        
+    }
+
+    .section2{
+        @include flex();
+        @include size();
+        justify-content: center;
+        background-color: $bg;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: $text1;
+        &__header{
+            @include base($js:start);
+            padding-left: 50px;
+            &__h1{
+                color: $text1;
+                font-size: 25px;
+                font-weight: bold;
+            
+            }
+        }
+        &__main{
+            @include base();
+            gap: 80px;
+            &__imgs{
+                @include base($js:start);
+            }
+            &__right{
+                @include flex();
+                .text{
+                    color: $text1;
+                }
+            }
+        }
+        &__footer{
+            @include base();
+            padding-top: 40px;
+        }
+    }
+
+    .section3{
+        background-color: $bg;
+        @include size();
+        @include base();
+        &__imgs{
+            width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+    }
+
+    .section4{
+        @include size();
+        background-color: $bg;
+        color: $text1;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        @include flex();
+        gap: 70px;
+        &__header{
+            @include base($js:space-between);
+            &__div1{
+                padding-left: 173px;
+                &__p{
+                    font-size: 25px;
+                    font-weight: bold
+                }
+                &__div{
+                    width: 67px;
+                    border: 2px solid $btn;
+                }
+            }
+            &__div2{
+                padding-right: 173px;
+                &__btn{
+                    color: $text1;
+                    background-color: #FFFFFF1A;
+                    border: none;
+                    border-radius: 30px;
+                    width: 115px;
+                    height: 37px;
+                    font-weight: bold
+                }
+            }
+        }
+        &__cards{
+            @include base();
+            gap: 30px;
+            &__card{
+                width: 270px;
+                border-bottom: 4px solid $btn;
+                @include flex();
+                gap: 15px;
+                    &__text{
+                        @include flex();
+                position: relative;
+                gap: 2px;
+
+                        &__1{
+                            font-weight: bold;
+                            font-size: 16px;
+                        }
+                        &__2{
+                            font-weight: bold;
+                            font-size: 12px;
+                            color: $btn;
+                        }
+                        &__img{
+                            position: absolute;
+                            right: 10px;
+                            top: 10px;
+                        }
+                    }
+                    &__price{
+                        font-size: 20px;
+                        font-weight: bold;
+                        color: $btn;
+                    }
+            }
+        }
+    }
+
+    .section5{
+        width: 100%;
+        height: 550px;
+        background: linear-gradient(278.18deg, #0D9AED 15.41%, rgb(138, 38, 47) 100%);
+        background-size: contain;
+        @include base();
+        &__image{
+            padding-bottom: 150px;
+        }
+    }
+
+    .section6{
+        @include base();
+        @include size($m-hg:1200px);
+        background-color: $bg;
+        color: $text1;
+        flex-direction: column;
+        @include flex();
+        gap: 70px;
+        &__header{
+            width: 100%;
+            @include base($js:space-between);
+            &__div1{
+                padding-left: 158px;
+            }
+            &__div2{
+                padding-right: 205px;
+            }
+        }
+        &__cards{
+            width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            .section6__cards__card__price{
+                font-weight: bold;
+                @include base($js:start);
+                gap: 20px;
+                &__endirim{
+                    width: 95px;
+                    height: 44px;
+                    @include base();
+                    background-color: $btn;
+                    color: $text1;
+                    font-size: 20px;
+                    border-top-right-radius: 30px;
+                    border-bottom-right-radius: 30px;
+                    padding-top: 10px;
+                    padding-right: 10px;
+                }
+                &__span1{
+                    color: $btn;
+                    font-size: 20px;
+                }
+                &__span2{
+                    color: $text2;
+                    font-size: 17px;
+                }
+            }
+        }
+    }
+}
+
+
+.footer {
+    @include base($js: space-around);
+    color: $border;
+    background-color: $bg;
+    height: 300px;
+
+    &__div1 {
+        @include base();
+        gap: 90px;
+        &__list1{
+            &__ul{
+                @include flex();
+                gap: 10px
+            }
+        }
+        &__list2{
+            &__ul{
+                @extend .footer__div1__list1__ul
+            }
+        }
+    }
+
+    &__div2 {
+        @include base();
+        gap: 90px;
+
+        &__follow {
+            @include flex();
+            gap: 20px;
+            color: $text1;
+
+            &__icons {
+                @include base($js: start);
+                gap: 10px;
+
+                &__f {
+                    @include base();
+                    width: 43px;
+                    height: 43px;
+                    border-radius: 42px;
+                    background-color: $btn;
+                    color: $text1;
+                }
+                &__t{
+                    @extend .footer__div2__follow__icons__f
+                }
+                &__i{
+                    @extend .footer__div2__follow__icons__f
+                }
+            }
+        }
+        &__contact{
+            @include flex();
+            gap: 17px;
+            padding-bottom: 30px;
+            &__p{
+                color: $text1;
+            }
+        }
+    }
+}

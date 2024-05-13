@@ -1,0 +1,15 @@
+$colors:(
+    'text': #FFFFFF
+);
+
+@each $key, $val in $colors{
+    .#{$key}-color{
+        color: $val;
+    }
+
+    @for $i from 1 through 9{
+        .#{$key}-color-dark-#{$i}{
+            color: mix(gray, $val, $i*10%);
+        }
+    }
+}

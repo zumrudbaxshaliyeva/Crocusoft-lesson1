@@ -1,0 +1,30 @@
+@mixin base($ai: center, $js: center) {
+    display: flex;
+    justify-content: $js;
+    align-items: $ai;
+}
+
+@mixin flex{
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin border($br: 54px, $bdr:1px solid #FF4656, $hg: 31px, $wd:96px, $bg:#FF4656, $cl:#FFFFFF) {
+    border-radius: $br;
+    border: $bdr;
+    height: $hg;
+    width: $wd;
+    background-color: $bg;
+    color: $cl;
+}
+
+
+@mixin font($ff: Montserrat){
+    font-family: $ff;
+    font-size: 15px;
+}
+
+@mixin size ($m-hg:100vh){
+    width: 100%;
+    min-height: $m-hg;
+}
